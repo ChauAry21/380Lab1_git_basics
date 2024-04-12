@@ -60,6 +60,11 @@ class BinarySearchTree {
 	 */
 	public void preOrderTraversal(Node root) {
 		// implement in here
+		if (root != null) {
+			System.out.println(root.value + " ");
+			preOrderTraversal(root.left);
+			preOrderTraversal(root.right);
+		}
 	}
 
 	/*
