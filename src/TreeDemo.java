@@ -1,3 +1,5 @@
+import java.util.NoSuchElementException;
+
 class Node {
 	int value;
 	Node left, right;
@@ -97,7 +99,13 @@ class BinarySearchTree {
 	 */
 	public int getMin(Node root) {
 		// implement in here
-		return 0;
+		if (root == null) {
+			throw new NoSuchElementException("The tree is empty...");
+		}
+		if (root.left == null) {
+			return root.value;
+		}
+		return getMin(root.left);
 	}
 
 	/*
