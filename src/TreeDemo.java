@@ -114,7 +114,13 @@ class BinarySearchTree {
 	 */
 	public int getMax(Node root) {
 		// implement in here
-		return 0;
+		if (root == null) {
+			throw new NoSuchElementException("The tree is empty...");
+		}
+		if (root.right == null) {
+			return root.value;
+		}
+		return getMin(root.right);
 	}
 
 	/*
